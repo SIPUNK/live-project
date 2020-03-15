@@ -29,18 +29,55 @@ var btnBook=document.getElementById("btn-book");
 function start(){
     btnBook.className="btn_book";
     btnBook.disabled=false;
-    //相当于发布预约
-    Post_init();
+    document.getElementById("btn_startTime").disabled=true;
+    appPost();
 }
 
 function end(){
     btnBook.className="btn_book-unactive";
     btnBook.disabled=true;
+    document.getElementById("btn_startTime").disabled=false;
 }
+
+function appPost() {
+  alert("clickxxx");
+   //设置口罩数目
+   alert("开始预约");
+   var num=document.getElementById('maskNums').value;
+   //alert("口罩数目设为 "+num);
+  
+   var startTime;
+   var endTime;
+   //设置开始时间
+   startTime=year+"-"+month+"-"+day+" "+Hour+":"+Min+":"+date.getSeconds();
+  //结束时间
+   if(Hour+2<24){
+       //不进行更进一步的进位
+       endTime=year+"-"+month+"-"+day+" "+(Hour+2)+":"+Min+":"+date.getSeconds();
+   }
+   else{
+       var newHour=24;
+       endTime=year+"-"+month+"-"+day+" "+newHour+":"+Min+":"+date.getSeconds();
+   }
+   
+  $.post("http://118.178.184.69:8886/addLottery",
+           {"start_time":
+           startTime,
+           "end_time":
+           endTime,
+           "mask_number":
+           num
+          },function(data){
+    		 alert(data.id);
+       },"json")
+      
+}
+
 
 
 function Post_init(){
     //设置口罩数目
+    alert("开始预约");
     var num=document.getElementById('maskNums').value;
     //alert("口罩数目设为 "+num);
    
@@ -83,7 +120,7 @@ else
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     //此时请求结束获取返回值
-    
+    alert("success");
     }
   }
         xmlhttp.open("POST","118.178.184.69:8886/addLottery",true);
