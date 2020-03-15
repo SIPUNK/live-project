@@ -4,23 +4,23 @@ function Check() {
     var Phone = document.getElementById("phone").value;
     var Name = document.getElementById("name").value;
     var Mask_number = document.getElementById("mask_number").value;
-    // if(!CheckName())
-    // {
-    //     alert("输入的名字格式错误");
-    //     return;
-    // }
-    // if (!CheckIDCard()) {
-    //     alert("输入的身份证号码错误");
-    //     return;
-    // }
-    // if (!CheckSinglePhone()) {
-    //     alert("输入的手机号码错误");
-    //     return;
-    // }
-    // if (!CheckCount()) {
-    //     alert("输入的口罩数量不符合规定");
-    //     return;
-    // }
+    if(!CheckName())
+    {
+        alert("输入的名字格式错误");
+        return;
+    }
+    if (!CheckIDCard()) {
+        alert("输入的身份证号码错误");
+        return;
+    }
+    if (!CheckSinglePhone()) {
+        alert("输入的手机号码错误");
+        return;
+    }
+    if (!CheckCount()) {
+        alert("输入的口罩数量不符合规定");
+        return;
+    }
     var str = "?id=" + Id + "&phone=" + Phone + "&name=" + Name + "&mask_number=" + Mask_number + "&lottery_id=" + param;
     $.ajax({
         type: "get",
