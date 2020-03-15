@@ -1,0 +1,65 @@
+<!doctype html>
+
+<div>
+<head>
+<meta charset="utf-8">
+<title>口罩预约系统</title>
+<link rel="stylesheet" type="text/css" href="mainPage.css">
+</head>
+
+<body>
+        <div class="headTitle" style="background: chartreuse;">
+            <div class="headLine1">口罩预约系统</div>
+            <div id="headLine2">当前时间是2020年3月15号23:00</div>
+        </div>
+        <div class="neck">
+            <br>
+        </div>
+        <div class="wrap">
+        <div class="message">
+            <p>
+                XX口罩预约系统将于 xxxx年x月xx号 xx:00-yy:00开放，
+                <br>本次预约口罩总数为zz个。
+            </p>
+
+            <p>
+                预约规则：<br>在规定的开放时间内点击预约按钮进入预约界面
+                <br>填写表单(姓名、身份证号、手机号码，预约数目)并提交。
+                <br>提交成功后将获取一个不重复的编号。
+                <br>注意：如果手机号/身份证号码在前三次（包含本次）预约都预约成功，本次将无法预约，单次预约数目不超过3个。
+            </p>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div class="buttons">
+            <input  id="btn-book" class="btn_book-unactive" type="button" value="预约" 
+            onclick=""
+            disabled=true/>
+            <input  class="btn_query" type="button" value="查询" 
+            onclick="javascript:window.location.href='../查询页面/select.html'"/>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div class="interfaceTest">
+            <p>调试接口</p>
+            <div class="maskNum">
+                <label>预约口罩总数</label>
+                <input id="maskNums" type="text"/>
+            </div>
+            <div class="startTime">
+                <input  id="btn_startTime" type="button" value="开始预约"
+                onclick="start()"/>
+            </div>
+            <div class="endTime">
+                <input  class="btn_endTime" type="button" value="结束预约"
+                onclick="end()"/>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="mainPage.js"></script>
+</body>
