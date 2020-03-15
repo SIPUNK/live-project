@@ -3,17 +3,20 @@
 <head>
     <title>reserve</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/reserve.js"></script>
 </head>
 <body>
+    <script>
+        InitLottery();
+    </script>
 <div id="form-div">
-    <!-- <form id="reserve" action="/reserve" method="post"> -->
-    <form id="reserve">
-        <p>真实姓名：<input name="Name" type="text" id="Name" tabindex="1" size="15" value=""/></p>
-        <p>身份证：<input name="Id" type="text" id="Id" tabindex="2" size="16" value=""/></p>
-        <p>手机号：<input name="Phone" type="text" id="Phone" tabindex="3" size="16" value=""/></p>
-        <p>预约口罩数量(请输入数字1-3)：<input name="Count" type="text" id="Count" tabindex="4" size="16" value=""/></p>
-        <p><input type="submit" value="预约" onClick = "Check()">&nbsp<input type="reset" value="重置"></p>
+    <form id="reserve" action="##" method="get">
+        <p>真实姓名：<input name="name" type="text" id="name" tabindex="1" size="15" value=""/></p>
+        <p>身份证：<input name="id" type="text" id="id" tabindex="2" size="16" value=""/></p>
+        <p>手机号：<input name="phone" type="text" id="phone" tabindex="3" size="16" value=""/></p>
+        <p>预约口罩数量(请输入数字1-3)：<input name="mask_number" type="text" id="mask_number" tabindex="4" size="16" value=""/></p>
+        <p><input type="button" value="预约" onClick = "Check()">&nbsp<input type="reset" value="重置"></p>
     </form>
 </div>
 </body>
