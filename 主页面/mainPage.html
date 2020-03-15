@@ -1,0 +1,57 @@
+<!doctype html>
+
+<div>
+<head>
+<meta charset="utf-8">
+<title>口罩预约系统</title>
+<link rel="stylesheet" type="text/css" href="mainPage.css">
+</head>
+
+<body>
+        <div class="headTitle" style="background-color: blue;">
+            <div class="headLine1">口罩预约系统</div>
+            <div class="headLine2">当前时间是2020年3月15号23:00</div>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div class="wrap">
+        <div class="message">
+            <p>
+                XX口罩预约系统将于 2020年3月15号2 21:00-23:00开放，
+                <br>本次预约口罩总数为500个。
+            </p>
+
+            <p>
+                预约规则：<br>在规定的开放时间内点击预约按钮进入预约界面
+                <br>填写表单(姓名、身份证号、手机号码，预约数目)并提交。
+                <br>提交成功后将获取一个不重复的编号。
+                <br>注意：如果手机号/身份证号码在前三次（包含本次）预约都预约成功，本次将无法预约，单次预约数目不超过3个。
+            </p>
+        </div>
+
+        <div class="buttons">
+            <input  class="btn_book" type="button" value="预约"/>
+            <input  class="btn_query" type="button" value="查询" />
+        </div>
+    
+        <div class="interfaceTest">
+            <div class="startTime">
+                <label>预约开始时间</label>
+                <input type="text"/>
+                <input  class="btn_startTime" type="button" value="开始时间"/>
+            </div>
+            <div class="endTime">
+                <label>预约结束时间</label>
+                <input type="text"/>
+                <input  class="btn_endTime" type="button" value="结束时间"/>
+            </div>
+            <div class="maskNum">
+                <label>预约口罩总数</label>
+                <input type="text"/>
+                <input  class="btn_maskNum" type="button" value="口罩总数"/>
+            </div>
+        </div>
+
+    </div>
+</body>
