@@ -8,18 +8,18 @@
 </head>
 
 <body>
-        <div class="headTitle" style="background-color: blue;">
+        <div class="headTitle" style="background: chartreuse;">
             <div class="headLine1">口罩预约系统</div>
-            <div class="headLine2">当前时间是2020年3月15号23:00</div>
+            <div id="headLine2">当前时间是2020年3月15号23:00</div>
         </div>
-        <div>
+        <div class="neck">
             <br>
         </div>
         <div class="wrap">
         <div class="message">
             <p>
-                XX口罩预约系统将于 2020年3月15号2 21:00-23:00开放，
-                <br>本次预约口罩总数为500个。
+                XX口罩预约系统将于 xxxx年x月xx号 xx:00-yy:00开放，
+                <br>本次预约口罩总数为zz个。
             </p>
 
             <p>
@@ -29,29 +29,37 @@
                 <br>注意：如果手机号/身份证号码在前三次（包含本次）预约都预约成功，本次将无法预约，单次预约数目不超过3个。
             </p>
         </div>
-
-        <div class="buttons">
-            <input  class="btn_book" type="button" value="预约"/>
-            <input  class="btn_query" type="button" value="查询" />
+        <div>
+            <br>
         </div>
-    
+        <div class="buttons">
+            <input  id="btn-book" class="btn_book-unactive" type="button" value="预约" 
+            onclick="javascript:window.location.href='../查询页面/select.html'"
+            disabled=true/>
+            <input  class="btn_query" type="button" value="查询" 
+            onclick="javascript:window.location.href='../查询页面/select.html'"/>
+        </div>
+        <div>
+            <br>
+        </div>
         <div class="interfaceTest">
+            <p>调试接口</p>
             <div class="startTime">
-                <label>预约开始时间</label>
-                <input type="text"/>
-                <input  class="btn_startTime" type="button" value="开始时间"/>
+                <input  class="btn_startTime" type="button" value="开始预约"
+                onclick="start()"/>
             </div>
             <div class="endTime">
-                <label>预约结束时间</label>
-                <input type="text"/>
-                <input  class="btn_endTime" type="button" value="结束时间"/>
+                <input  class="btn_endTime" type="button" value="结束预约"
+                onclick="end()"/>
             </div>
             <div class="maskNum">
-                <label>预约口罩总数</label>
-                <input type="text"/>
-                <input  class="btn_maskNum" type="button" value="口罩总数"/>
+                <p>预约口罩总数</p>
+                <input id="maskNums" type="text"/>
+                <input  class="btn_maskNum" type="button" value="修改"
+                onclick="Post_init()"/>
             </div>
         </div>
 
     </div>
+    <script src="mainPage.js"></script>
 </body>
