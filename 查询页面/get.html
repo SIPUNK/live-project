@@ -4,44 +4,41 @@
     <meta charset="utf-8" />
     <title>中签页面</title>
     <style>
-        body
-        {
-            width:100%;
-            height:100%;
+        body {
+            width: 100%;
+            height: 100%;
             background-color: #f8f6f3;
-
         }
-        .get-box 
-        {
-            text-align:center;
+
+        .get-box {
+            text-align: center;
             background-color: #fff;
             box-shadow: 1px 1px #edf1f4;
             padding: 20px;
             overflow-y: auto;
         }
-        .buy-group
-        {
-            width:100%;
-            text-align:center;
+
+        .buy-group {
+            width: 100%;
+            text-align: center;
         }
-         .return_button
-        {
+
+        .return_button {
             display: inline-block;
-       
             line-height: 1;
             white-space: nowrap;
-            font-weight: 500;           
-            padding: 12px 20px;   
-            font-size: 14px;    
-            border-radius: 4px;     
-            color:white;
-            background-color:#409eff;        
-            border-color:#409eff;
+            font-weight: 500;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            color: white;
+            background-color: #409eff;
+            border-color: #409eff;
         }
-         .input_text
-        {
+
+        .input_text {
             -webkit-appearance: none;
-            background-color:#fff;
+            background-color: #fff;
             background-image: none;
             border-radius: 4px;
             font-size: inherit;
@@ -51,24 +48,27 @@
             padding: 0 15px;
         }
     </style>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="get.js"></script>
 </head>
-<body>
+<body onload="getData();">
     <div class="buy-group">      
-        <form class="get-box">
+        <form class="get-box" action="select.html">
             <h1>你的购买凭证</h1>
             <p>姓名：</p>
-            <input type="text" class="input_text" name="name" disabled="disabled" />
+            <input type="text" class="input_text" id="name" disabled="disabled" />          
             <p>身份证号：</p>
-            <input type="text" class="input_text" name="name" disabled="disabled" />
+            <input type="text" class="input_text" id="id" disabled="disabled" />
             <p>电话号：</p>
-            <input type="text" class="input_text" name="name" disabled="disabled" />
+            <input type="text" class="input_text" id="phone" disabled="disabled" />
             <p>购买数量：</p>
-            <input type="text" class="input_text" name="name" disabled="disabled" />
+            <input type="text" class="input_text" id="count" disabled="disabled" />
             <br /> <br /> <br />
-            <button name="return" class="return_button">返回</button>
+            <input type="submit" id="return" class="return_button" value="返回" />
         </form>
         
     </div>
     
 </body>
 </html>
+
