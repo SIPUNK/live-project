@@ -26,10 +26,92 @@ time.textContent="当前时间是"+year+"年"+month+"月"+day+"日 "+Hour+":"+Mi
 
 var btnBook=document.getElementById("btn-book");
 
-function start(){
+
+
+
+window.onload=function(){
+  //页面加载完毕时执行的方法
+  alert("windows");
+  btnBook.disabled=true;
+  
+  //var getTime1=CookieUtil.get("startTime");
+  //var getTime2=CookieUtil.get("endTime");
+  var getTime1=localStorage.startTime;
+  var getTime2=localStorage.endTime;
+
+  if(getTime1!=null&&getTime2!=null){
+     var date=new Date();
+     var myDate=date.toLocaleDateString();
+     var time=new Date(myDate);
+     this.alert("执行内部函数"+getTime1+"/"+time+"/"+getTime2);
+     getTime1=new Date(Date.parse(getTime1));
+     getTime2=new Date(Date.parse(getTime2));
+     time=new Date(Date.parse(time));
+     if(time>=getTime1&&time<getTime2){
+       alert("Session remember you");
+       btnBook.className="btn_book";
+       btnBook.disabled=false;
+     }else{
+       this.alert("not inside");
+       
+     }
+  }
+  else{
+    this.alert("not session");
+  }
+  //this.alert(getTime1+"/"+getTime2);
+  //this.alert("执行结束");
+  
+}
+
+
+
+
+function judgeTime(){
+  //获取开始时间
+  var sT=document.getElementById("StartTime").value;
+  
+  //获取结束时间
+  var eT=document.getElementById("EndTime").value;
+  //获取当前时间
+  var myDate=new Date();
+  var nt=myDate.toLocaleDateString(); 
+  var sT_1=new Date(sT);
+  var eT_1=new Date(eT);
+  var nT_1=new Date(nt);
+  
+  //存储时间
+  //CookieUtil.set("startTime", sT_1);
+  //CookieUtil.set("endTime",eT_1);
+  //SetCookie("st",sT_1);
+  //SetCookie("et",eT_1);
+  localStorage.startTime=sT_1;
+  localStorage.endTime=eT_1;
+  //alert(sT_1+"/"+eT_1+"/"+nT_1);
+  //如果当前时间在开始时间和结束时间之间
+  sT_1=new Date(Date.parse(sT_1));
+  eT_1=new Date(Date.parse(eT_1));
+  nT_1=new Date(Date.parse(nT_1));
+  if(nT_1>=sT_1&&nT_1<eT_1){
     btnBook.className="btn_book";
     btnBook.disabled=false;
+    alert("OKTime");
+  }else{
+    alert("Not OK");
+  }
+
+  var getTime1=localStorage.startTime;
+  var getTime2=localStorage.endTime;
+  
+  
+  alert(getTime1+"/"+getTime2);
+  
+}
+
+function start(){
+    
     document.getElementById("btn_startTime").disabled=true;
+    judgeTime();
     appPost();
 }
 
@@ -40,7 +122,7 @@ function end(){
 }
 
 function appPost() {
-  alert("clickxxx");
+  //alert("clickxxx");
    //设置口罩数目
    alert("开始预约");
    var num=document.getElementById('maskNums').value;
@@ -68,7 +150,7 @@ function appPost() {
            "mask_number":
            num
           },function(data){
-    		 alert(data.id);
+    		 //alert(data.id);
        },"json")
       
 }
